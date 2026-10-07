@@ -1,0 +1,55 @@
+{
+  "name": "envguard",
+  "version": "0.1.0",
+  "description": "Local environment validation and deterministic secret scanning for JavaScript and TypeScript repositories.",
+  "type": "module",
+  "license": "MIT",
+  "author": "braz",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebraz/EnvGuard.git"
+  },
+  "homepage": "https://github.com/thebraz/EnvGuard#readme",
+  "bugs": {
+    "url": "https://github.com/thebraz/EnvGuard/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "envguard": "dist/cli.js"
+  },
+  "files": [
+    "dist/*.js",
+    "README.md",
+    "SECURITY.md",
+    "ARCHITECTURE.md",
+    "TESTING.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dotenv",
+    "environment-variables",
+    "secret-scanner",
+    "configuration-security",
+    "ci",
+    "typescript"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit --noUnusedLocals --noUnusedParameters --noFallthroughCasesInSwitch",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:package": "node scripts/package-smoke.mjs",
+    "check": "npm run typecheck && npm run lint && npm test && npm run test:package",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "typescript": "6.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "include": ["src"],
+  "schema": {
+    "PATH": { "type": "string", "required": false },
+    "SystemRoot": { "type": "string", "required": false }
+  },
+  "failOn": "error"
+}
