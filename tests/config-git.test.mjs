@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFile, spawnSync } from 'node:child_process';
-import { copyFile, mkdtemp, mkdir, rm, symlink, writeFile } from 'node:fs/promises';
+import { copyFile, mkdtemp, mkdir, realpath, rm, symlink, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { promisify } from 'node:util';
@@ -98,7 +98,7 @@ test('project paths reject symlink components and symlinked configuration', asyn
   await symlink(outside, path.join(root, 'linked'), process.platform === 'win32' ? 'junction' : 'dir');
   await assert.rejects(resolveProjectPath(root, 'linked/config.json'), safeError);
   await assert.rejects(loadConfig(root, 'linked/config.json'), safeError);
-  assert.equal(await resolveProjectPath(root, '.'), root);
+  assert.equal(await resolveProjectPath(root, '.'), await realpath(root));
   await assert.rejects(resolveProjectPath(root, 'missing'), safeError);
 });
 
