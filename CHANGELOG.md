@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — 2026-10-07
+
+- Publish as `@thebraz/envguard` because the npm registry rejects `envguard` as too similar to the existing `env-guard` package; retain the `envguard` command and braz authorship.
+- Align installation documentation and packed-package verification with the scoped package.
+- Preserve the previously published GitHub `v0.1.0` tag and release.
+
 ## 0.1.0 — 2026-10-07
 
 - Add local `init`, `scan`, `validate`, and `ci` commands with text/JSON reports and stable policy/execution exit codes.

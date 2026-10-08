@@ -46,6 +46,6 @@ export interface ScanResult {
   filesScanned: number;
   exitCode: 0 | 1;
 }
-export const VERSION = '0.1.0';
+export const VERSION = '0.1.1';
 export const SEVERITIES: Severity[] = ['info', 'warning', 'error', 'critical'];
 export class EnvGuardError extends Error {}

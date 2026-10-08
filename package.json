@@ -1,10 +1,13 @@
 {
-  "name": "envguard",
-  "version": "0.1.0",
+  "name": "@thebraz/envguard",
+  "version": "0.1.1",
   "description": "Local environment validation and deterministic secret scanning for JavaScript and TypeScript repositories.",
   "type": "module",
   "license": "MIT",
   "author": "braz",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thebraz/EnvGuard.git"

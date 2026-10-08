@@ -53,8 +53,8 @@ try {
   const installArgs = [npm, 'install', '--ignore-scripts', '--no-audit', '--no-fund', path.join(temporary, packed.filename)];
   if (existsSync(cache)) installArgs.push('--offline', '--cache', cache);
   run(process.execPath, installArgs, { cwd: consumer });
-  const executable = path.join(consumer, 'node_modules/envguard/dist/cli.js');
-  const installed = JSON.parse(await readFile(path.join(consumer, 'node_modules/envguard/package.json'), 'utf8'));
+  const executable = path.join(consumer, 'node_modules', manifest.name, 'dist/cli.js');
+  const installed = JSON.parse(await readFile(path.join(consumer, 'node_modules', manifest.name, 'package.json'), 'utf8'));
   assert.equal(installed.name, manifest.name);
   assert.equal(installed.version, manifest.version);
   assert.equal(installed.license, 'MIT');

@@ -208,7 +208,7 @@ test('symlink escape and loop are not followed', async t => {
 
 test('version/help/unknown-command contract', async t => {
   const root = await fixture(t);
-  assert.equal(cli(root, ['--version']).stdout.trim(), '0.1.0');
+  assert.equal(cli(root, ['--version']).stdout.trim(), '0.1.1');
   assert.ok(cli(root, ['scan', '--help']).stdout.includes('Usage:'));
   assert.equal(cli(root, ['no-such-command']).status, 2);
   assert.equal(cli(root, ['scan', '--format', 'json', '--format', 'text']).status, 2);

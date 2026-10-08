@@ -9,7 +9,7 @@ It runs locally without telemetry, remote APIs, accounts, or AI services. Secret
 Requires Node.js 22 or newer; the verification matrix uses the [supported Node.js 22 and 24 release lines](https://github.com/nodejs/Release). The parser/compiler dependency is [TypeScript 6](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html).
 
 ```sh
-npm install --save-dev envguard
+npm install --save-dev @thebraz/envguard
 npx envguard init
 npx envguard scan
 ```
@@ -21,7 +21,7 @@ npm ci --ignore-scripts
 npm run check
 npm pack
 # In the project you want to check:
-npm install --save-dev /path/to/envguard-0.1.0.tgz
+npm install --save-dev /path/to/thebraz-envguard-0.1.1.tgz
 ```
 
 `init` detects common source directories using effective Git ignore rules, then creates `.envguard.json`. Mixed layouts with source or environment files outside those directories use the project root. Conventional environment files and templates remain automatically discoverable when added later; initialization does not freeze a list of current filenames. It preserves existing configuration and never edits `.env` files. Review the generated include paths before using the tool as a security gate.
